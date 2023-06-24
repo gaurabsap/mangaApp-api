@@ -22,7 +22,7 @@ export const GetMangaInfo = async (resq, resp) => {
   const { infoId } = resq.query;
   //   console.log(infoId);
   try {
-    const provider = new MANGA.MangaDex();
+    const provider = new MANGA.MangaReader();
     const data = await provider.fetchMangaInfo(infoId);
     return resp.status(200).json({
       data,
@@ -39,7 +39,7 @@ export const GetChapterPage = async (resq, resp) => {
   //   console.log(chapterId);
 
   try {
-    const provider = new MANGA.MangaDex();
+    const provider = new MANGA.MangaReader();
     const data = await provider.fetchChapterPages(chapterId);
     return resp.status(200).json({
       data,
