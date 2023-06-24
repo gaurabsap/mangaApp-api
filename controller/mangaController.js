@@ -3,7 +3,7 @@ import { MANGA } from "@consumet/extensions";
 export const SearchManga = async (resq, resp) => {
   const { name } = resq.params;
   try {
-    const provider = new MANGA.MangaDex();
+    const provider = new MANGA.MangaReader();
 
     const data = await provider.search(name);
     if (data) {
